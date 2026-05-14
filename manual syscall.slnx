@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="manual syscall.vcxproj" Id="7a4b89af-92af-41a6-95d4-d3c178b9562f" />
+</Solution>
