@@ -14,6 +14,7 @@ PUBLIC SyscallStub
 SyscallStub PROC
 	mov eax, syscallIndex
 	mov r10, rcx
+	mov syscallIndex, 0
 	syscall
 	ret
 SyscallStub ENDP
