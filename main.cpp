@@ -3,10 +3,10 @@
 #include <stdio.h>
 #include "stubs.hpp"
 
-#define NtQueryInformationProcessSyscallIdx 0x19
 // https://j00ru.vexillium.org/syscalls/nt/64/
+#define NtQueryInformationProcessSyscallIdx 0x19
 // this kernel routine had the 0x19 syscall index since windows 10 1507
-// cannot take it for granted in production, always resolve syscall numbers during runtime, this is only a simple poc
+// cannot take it for granted in production though, always resolve syscall numbers during runtime, this is only a simple poc
 
 int main() {
 	SIZE_T portNumber = 0;
