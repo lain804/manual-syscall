@@ -17,11 +17,11 @@ int main() {
 	uint64_t portNumber = 0;
 
 	{
-		SetupSyscall(NtQueryInformationProcessSyscallIndex);
+		SetSyscallIndex(NtQueryInformationProcessSyscallIndex);
 
-		NTSTATUS ok = SyscallStub(GetCurrentProcess(), ProcessDebugPort, &portNumber, sizeof(portNumber), NULL);
+		NTSTATUS ok = ExecuteSyscallWithArgs(GetCurrentProcess(), ProcessDebugPort, &portNumber, sizeof(portNumber), NULL);
 
-		CleanupSyscall();
+		ResetSyscallIndex();
 
 		if (!NT_SUCCESS(ok)) {
 			printf("Manual Syscall failed with code: 0x%X\n", ok);

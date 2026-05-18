@@ -4,24 +4,24 @@ syscallIndex DWORD 0
 
 .code
 
-PUBLIC SetupSyscall
-SetupSyscall PROC
+PUBLIC SetSyscallIndex
+SetSyscallIndex PROC
 	mov syscallIndex, ecx
 	ret
-SetupSyscall ENDP
+SetSyscallIndex ENDP
 
-PUBLIC SyscallStub
-SyscallStub PROC
+PUBLIC ExecuteSyscallWithArgs
+ExecuteSyscallWithArgs PROC
 	mov eax, syscallIndex
 	mov r10, rcx
 	syscall
 	ret
-SyscallStub ENDP
+ExecuteSyscallWithArgs ENDP
 
-PUBLIC CleanupSyscall
-CleanupSyscall PROC
+PUBLIC ResetSyscallIndex
+ResetSyscallIndex PROC
 	mov syscallIndex, 0
 	ret
-CleanupSyscall ENDP
+ResetSyscallIndex ENDP
 
 END

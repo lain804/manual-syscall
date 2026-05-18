@@ -3,6 +3,6 @@
 #include <Windows.h>
 #include <cstdint>
 
-extern "C" NTSTATUS SyscallStub(...);
-extern "C" void SetupSyscall(uint32_t idx);
-extern "C" void CleanupSyscall();
+extern "C" NTSTATUS ExecuteSyscallWithArgs(...);
+extern "C" void SetSyscallIndex(uint32_t idx);
+extern "C" void ResetSyscallIndex();
